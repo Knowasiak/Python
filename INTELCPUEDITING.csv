@@ -1,0 +1,12 @@
+1,Core i7-11700,Rocket Lake,8 / 16,2.5 to 4.9 GHz,Socket 1200,14 nm,16MB,65 W,Mar 16th 2021
+2,Core i7-11700F,Rocket Lake,8 / 16,2.5 to 4.9 GHz,Socket 1200,14 nm,16MB,65 W,Mar 16th 2021
+3,Core i7-11700K,Rocket Lake,8 / 16,3.6 to 5 GHz,Socket 1200,14 nm,16MB,125 W,Mar 16th 2021
+4,Core i7-11700KF,Rocket Lake,8 / 16,3.6 to 5 GHz,Socket 1200,14 nm,16MB,125 W,Mar 16th 2021
+5,Core i7-11700T,Rocket Lake,8 / 16,1.4 to 4.6 GHz,Socket 1200,14 nm,16MB,35 W,Mar 16th 2021
+6,Core i7-12700K,Alder Lake,12 / 20,3.6 to 5 GHz,Socket 1700,10 nm,25MB,125 W,Nov 4th 2021
+7,Core i7-12700KF,Alder Lake,12 / 20,3.6 to 5 GHz,Socket 1700,10 nm,25MB,125 W,Nov 4th 2021
+8,Core i9-11900K,Rocket Lake,8 / 16,3.5 to 5.3 GHz,Socket 1200,14 nm,16MB,125 W,Mar 16th 2021
+9,Core i9-11900KF,Rocket Lake,8 / 16,3.5 to 5.3 GHz,Socket 1200,14 nm,16MB,125,Mar 16th 2021,Rs
+10,Core i9-11900T,Rocket Lake,8 / 16,1.5 to 4.9 GHz,Socket 1200,14 nm,16MB,35 W,Mar 16th 2021,Rs 35000
+11,Core i9-12900K,Alder Lake,16 / 24,3.2 to 5.2 GHz,Socket 1700,10 nm,30MB,125 W,Nov 4th 2021,Rs 58000
+12,Core i9-12900KF,Alder Lake,16 / 24,3.2 to 5.2 GHz,Socket 1700,10 nm,30MB,125 W,Nov 4th 2021,Rs 55000
