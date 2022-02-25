@@ -17,12 +17,12 @@ wronginput="\n\nYou have given unspecified input. Please give the input again to
 #introduction text for the whole progrram
 print("\n\nChatbot : HELLO GUEST! WELCOME TO MY IP PROJECT. \n                       This chatbot is made by Aditya Gaurav as a IP project of class 12th Science CRSKYN; \n                       For helping people to understand more about CPU's, GPU's and there realted things, and help them to buy according to their need.\n")
 #Asking the name of the user to feel reliable and increase User Experience.
-Name=input("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\nChatbot : Hello buddy! \n                       I would like to know your name to begin.\n                       Enter your name : ")
+Name=input("\n\n\nChatbot : Hello buddy! \n                       I would like to know your name to begin.\n                       Enter your name : ")
 print("\nYour Input :",Name)
 
 while True:
     #Guiding the user to asnwer based upon the field of his query to go step by step.
-    print("\n\nChatbot : Hello", Name,".\n                       HOW MAY I HELP YOU TODAY? \n \n                       Q. Choose your Query Type : \n                       1. Technical Terminologies Guide \n                       2. CPU Buying Guide \n                       3. GPU Buying Guide\n                       4. Visual Representations\n                       5. Edit Data\n                        5. Add SKUs\n                        Enter your answer in number.")
+    print("\n\nChatbot : Hello", Name,".\n                       HOW MAY I HELP YOU TODAY? \n \n                       Q. Choose your Query Type : \n                       1. Technical Terminologies Guide \n                       2. CPU Buying Guide \n                       3. GPU Buying Guide\n                       4. Visual Representations\n                       5. Edit Data\n                       6. Add SKUs\n                        Enter your answer in number.")
 
     #predefined the name of the user of thsi chatbot to use it again in the system easily using concatenation.
     Username=(" \n "+ str(Name)+" : ")
@@ -68,10 +68,10 @@ while True:
             #Storing user input in variable to compare it later in code and show predefined outputs.
             
             if CPUType==1:
-                df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUGAMING.csv",names=["Sr.no.","Product Name","Codename","Cores","Clock","Socket","Lithography","L3 Cache","TDP","Released","Approx.Price"])
+                df=pd.read_csv("C:\\Users\\Student22\\Desktop\\Python\\AMDCPUGAMING.csv",names=["Sr.no.","Product Name","Codename","Cores","Clock","Socket","Lithography","L3 Cache","TDP","Released","Approx.Price"])
                 print(PrintStatement,df)
             elif CPUType==2:
-                df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUEDITING.csv",names=["Sr.no.","Product Name","Codename","Cores","Clock","Socket","Lithography","L3 Cache","TDP","Released","Approx.Price"])
+                df=pd.read_csv("C:\\Users\\Student22\\Desktop\\Python\\AMDCPUEDITING.csv",names=["Sr.no.","Product Name","Codename","Cores","Clock","Socket","Lithography","L3 Cache","TDP","Released","Approx.Price"])
                 print(PrintStatement,df)
             else:
                 print(wronginput)
@@ -82,10 +82,10 @@ while True:
             #Storing user input in variable to compare it later in code and show predefined outputs.
             
             if CPUType==1:
-                df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\INTELCPUGAMING.csv",names=["Sr.no.","Product Name","Codename","Cores","Clock","Socket","Lithography","L3 Cache","TDP","Released","Approx.Price"])
+                df=pd.read_csv("C:\\Users\\Student22\\Desktop\\Python\\INTELCPUGAMING.csv",names=["Sr.no.","Product Name","Codename","Cores","Clock","Socket","Lithography","L3 Cache","TDP","Released","Approx.Price"])
                 print(PrintStatement,df)
             elif CPUType==2:
-                df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\INTELCPUEDITING.csv",names=["Sr.no.","Product Name","Codename","Cores","Clock","Socket","Lithography","L3 Cache","TDP","Released","Approx.Price"])
+                df=pd.read_csv("C:\\Users\\Student22\\Desktop\\Python\\INTELCPUEDITING.csv",names=["Sr.no.","Product Name","Codename","Cores","Clock","Socket","Lithography","L3 Cache","TDP","Released","Approx.Price"])
                 print(PrintStatement,df)
             else:
                 print(wronginput)
@@ -97,10 +97,10 @@ while True:
         GPUid=int(input("                       1. AMD\n                       2. Nvidia\n                       Enter number as reply.\n"+str(Username)))
         #Storing user input in variable to compare it later in code and show predefined outputs.
         if GPUid==1:
-            df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\AMDGPU.csv",names=["Sr.no.","Product Name","Chip","Released","Bus","Memory","MemoryType","Bus Width","G.Clocks","M,Clocks","Shaders/TMU's/ROP's"])
+            df=pd.read_csv("C:\\Users\\Student22\\Desktop\\Python\\AMDGPU.csv",names=["Sr.no.","Product Name","Chip","Released","Bus","Memory","MemoryType","Bus Width","G.Clocks","M,Clocks","Shaders/TMU's/ROP's"])
             print(PrintStatement,df)
         elif GPUid==2:
-            df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\NVIDIAGPU.csv",names=["Sr.no.","Product Name","Chip","Released","Bus","Memory","Bus Width","G.Clocks","M,Clocks","Shaders/TMU's/ROP's"])
+            df=pd.read_csv("C:\\Users\\Student22\\Desktop\\Python\\NVIDIAGPU.csv",names=["Sr.no.","Product Name","Chip","Released","Bus","Memory","Bus Width","G.Clocks","M,Clocks","Shaders/TMU's/ROP's"])
             print(PrintStatement,df)
         else:
             print(wronginput)
@@ -110,13 +110,13 @@ while True:
         TESTGPU=int(input("\n                       1. Best GPU in market\n                       2. Best CPU in market\n                       Enter number as reply.\n"+str(Username)))
         #Storing user input in variable to compare it later in code and show predefined outputs.
         if TESTGPU==1:
-            df9=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\GPUMARKS.csv",names=["GPU Name","Score"])
+            df9=pd.read_csv("C:\\Users\\Student22\\Desktop\\Python\\GPUMARKS.csv",names=["GPU Name","Score"])
             df9.set_index('GPU Name').plot()
             plt.title("Best Performing GPU's Data")
             plt.ylabel("Benchmark Scores")
             plt.show()
         elif TESTGPU==2:
-            df9=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\CPUMARKS.csv",names=["CPU Name","Score"])
+            df9=pd.read_csv("C:\\Users\\Student22\\Desktop\\Python\\CPUMARKS.csv",names=["CPU Name","Score"])
             df9.set_index('CPU Name').plot()
             plt.title("Best Performing CPU's Data")
             plt.ylabel("Benchmark Scores")
@@ -130,13 +130,13 @@ while True:
         if DataADD==1:
             CPUEdit=int(input("\nChatbot : WHAT IS YOUR AMD CPU CATEGORY?\n                       1. Light Gaming/Office \n                       2. Heavy Gaming/Editing \n                       Enter number as reply.\n"+str(Username)))
             if CPUEdit==1:
-                file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUGAMING.csv","a+",newline='')
+                file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDCPUGAMING.csv","a+",newline='')
                 wr=csv.writer(file)
                 wr.writerow([])
                 REC=[]
                 ask='y'
                 while ask=='y':
-                    SR=input("Enter Sr.No. of Product")
+                    SR=input("Enter Sr.No. of Product: ")
                     Product=input("Enter Product Name: ")
                     SKU=input("Enter SKU Name: ")
                     Cores=input("Enter Cores & Threads in no.: ")
@@ -154,13 +154,13 @@ while True:
                 file.close()
 
             if CPUEdit==2:
-                file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUEDITING.csv","a+",newline='')
+                file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDCPUEDITING.csv","a+",newline='')
                 wr=csv.writer(file)
                 wr.writerow([])
                 REC=[]
                 ask='y'
                 while ask=='y':
-                    SR=input("Enter Sr.No. of Product")
+                    SR=input("Enter Sr.No. of Product: ")
                     Product=input("Enter Product Name: ")
                     SKU=input("Enter SKU Name: ")
                     Cores=input("Enter Cores & Threads in no.: ")
@@ -182,13 +182,13 @@ while True:
         if DataADD==2:
             CPUEdit=int(input("\nChatbot : WHAT IS YOUR INTEL CPU CATEGORY?\n                       1. Light Gaming/Office \n                       2. Heavy Gaming/Editing \n                       Enter number as reply.\n"+str(Username)))
             if CPUEdit==1:
-                file=open("C:\\Users\\Trans\\Desktop\\Python\\INTELCPUGAMING.csv","a+",newline='')
+                file=open("C:\\Users\\Student22\\Desktop\\Python\\INTELCPUGAMING.csv","a+",newline='')
                 wr=csv.writer(file)
                 wr.writerow([])
                 REC=[]
                 ask='y'
                 while ask=='y':
-                    SR=input("Enter Sr.No. of Product")
+                    SR=input("Enter Sr.No. of Product: ")
                     Product=input("Enter Product Name: ")
                     SKU=input("Enter SKU Name: ")
                     Cores=input("Enter Cores & Threads in no.: ")
@@ -206,13 +206,13 @@ while True:
                 file.close()
 
             if CPUEdit==2:
-                file=open("C:\\Users\\Trans\\Desktop\\Python\\INTELCPUEDITING.csv","a+",newline='')
+                file=open("C:\\Users\\Student22\\Desktop\\Python\\INTELCPUEDITING.csv","a+",newline='')
                 wr=csv.writer(file)
                 wr.writerow([])
                 REC=[]
                 ask='y'
                 while ask=='y':
-                    SR=input("Enter Sr.No. of Product")
+                    SR=input("Enter Sr.No. of Product: ")
                     Product=input("Enter Product Name: ")
                     SKU=input("Enter SKU Name: ")
                     Cores=input("Enter Cores & Threads in no.: ")
@@ -233,54 +233,54 @@ while True:
                 print(wronginput)
 
         if DataADD==3:
-            file=open("C:\\Users\\Trans\\Desktop\\Python\\NVIDIAGPU.csv","a+",newline='')
-                wr=csv.writer(file)
-                wr.writerow([])
-                REC=[]
-                ask='y'
-                while ask=='y':
-                    SR=input("Enter Sr.No. of Product")
-                    Product=input("Enter Product Name: ")
-                    SKU=input("Enter SKU Name: ")
-                    Date=input("Enter Product Launch Date: ")
-                    Cores=input("Enter PCIe Lane ")
-                    Clock=input("Enter Memory in GB: ")
-                    Socket=input("Enter RAM Type: ")
-                    Lithography=input("Enter Bus Width: ")
-                    Cache=input("Enter G.Clocks: ")
-                    Power=input("Enter Mem. Clocks: ")
-                    Tflops=input("Enter Shaders,TMUs,ROPs")
-                    NewREC=[SR,Product ,SKU,Date,Cores,Clock,Socket,Lithography,Cache,Power,Tflops]
-                    REC.append(NewREC)
-                    ask=input("\nEnter y to continue or any other char to exit")
-                for i in REC:
-                    wr.writerow(i)
-                file.close()
+            file=open("C:\\Users\\Student22\\Desktop\\Python\\NVIDIAGPU.csv","a+",newline='')
+            wr=csv.writer(file)
+            wr.writerow([])
+            REC=[]
+            ask='y'
+            while ask=='y':
+                SR=input("Enter Sr.No. of Product: ")
+                Product=input("Enter Product Name: ")
+                SKU=input("Enter SKU Name: ")
+                Date=input("Enter Product Launch Date: ")
+                Cores=input("Enter PCIe Lane ")
+                Clock=input("Enter Memory in GB: ")
+                Socket=input("Enter RAM Type: ")
+                Lithography=input("Enter Bus Width: ")
+                Cache=input("Enter G.Clocks: ")
+                Power=input("Enter Mem. Clocks: ")
+                Tflops=input("Enter Shaders,TMUs,ROPs")
+                NewREC=[SR,Product ,SKU,Date,Cores,Clock,Socket,Lithography,Cache,Power,Tflops]
+                REC.append(NewREC)
+                ask=input("\nEnter y to continue or any other char to exit")
+            for i in REC:
+                wr.writerow(i)
+            file.close()
                 
         if DataADD==4:
-            file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDGPU.csv","a+",newline='')
-                wr=csv.writer(file)
-                wr.writerow([])
-                REC=[]
-                ask='y'
-                while ask=='y':
-                    SR=input("Enter Sr.No. of Product")
-                    Product=input("Enter Product Name: ")
-                    SKU=input("Enter SKU Name: ")
-                    Date=input("Enter Product Launch Date: ")
-                    Cores=input("Enter PCIe Lane ")
-                    Clock=input("Enter Memory in GB: ")
-                    Socket=input("Enter RAM Type: ")
-                    Lithography=input("Enter Bus Width: ")
-                    Cache=input("Enter G.Clocks: ")
-                    Power=input("Enter Mem. Clocks: ")
-                    Tflops=input("Enter Shaders,TMUs,ROPs")
-                    NewREC=[SR,Product ,SKU,Date,Cores,Clock,Socket,Lithography,Cache,Power,Tflops]
-                    REC.append(NewREC)
-                    ask=input("\nEnter y to continue or any other char to exit")
-                for i in REC:
-                    wr.writerow(i)
-                file.close()
+            file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDGPU.csv","a+",newline='')
+            wr=csv.writer(file)
+            wr.writerow([])
+            REC=[]
+            ask='y'
+            while ask=='y':
+                SR=input("Enter Sr.No. of Product: ")
+                Product=input("Enter Product Name: ")
+                SKU=input("Enter SKU Name: ")
+                Date=input("Enter Product Launch Date: ")
+                Cores=input("Enter PCIe Lane ")
+                Clock=input("Enter Memory in GB: ")
+                Socket=input("Enter RAM Type: ")
+                Lithography=input("Enter Bus Width: ")
+                Cache=input("Enter G.Clocks: ")
+                Power=input("Enter Mem. Clocks: ")
+                Tflops=input("Enter Shaders,TMUs,ROPs")
+                NewREC=[SR,Product ,SKU,Date,Cores,Clock,Socket,Lithography,Cache,Power,Tflops]
+                REC.append(NewREC)
+                ask=input("\nEnter y to continue or any other char to exit")
+            for i in REC:
+                wr.writerow(i)
+            file.close()
 
         
     elif Guide==5:
@@ -291,10 +291,10 @@ while True:
 
 
             if CPUEdit==1:
-                file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUGAMING.csv","r")
+                file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDCPUGAMING.csv","r")
                 Reader=csv.reader(file)
                 L=[]
-                Uroll=int(input("\nEnter The SR.no. of Product to update.\n"))
+                Uroll=int(input("\nEnter The SR.no. of Product to update: \n"))
                 Found=False
                 for row in Reader:
                     if row[0]==str(Uroll):
@@ -323,7 +323,7 @@ while True:
                 if Found==False:
                     print('Sr.No. of Product not found')
                 else:
-                    file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUGAMING.csv","w+",newline='')
+                    file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDCPUGAMING.csv","w+",newline='')
                     Writer=csv.writer(file)
                     Writer.writerows(L)
                     file.seek(0)
@@ -334,10 +334,10 @@ while True:
 
                     
             if CPUEdit==2:
-                file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUEDITING.csv","r")
+                file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDCPUEDITING.csv","r")
                 Reader=csv.reader(file)
                 L=[]
-                Uroll=int(input("\nEnter The SR.no. of Product to update.\n"))
+                Uroll=int(input("\nEnter The SR.no. of Product to update: \n"))
                 Found=False
                 for row in Reader:
                     if row[0]==str(Uroll):
@@ -366,7 +366,7 @@ while True:
                 if Found==False:
                     print('Sr.No. of Product not found')
                 else:
-                    file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUEDITING.csv","w+",newline='')
+                    file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDCPUEDITING.csv","w+",newline='')
                     Writer=csv.writer(file)
                     Writer.writerows(L)
                     file.seek(0)
@@ -378,10 +378,10 @@ while True:
         if DataChange==2:
             CPUEdit=int(input("\nChatbot : WHAT IS YOUR INTEL CPU CATEGORY?\n                       1. Light Gaming/Office \n                       2. Heavy Gaming/Editing \n                       Enter number as reply.\n"+str(Username)))
             if CPUEdit==1:
-                file=open("C:\\Users\\Trans\\Desktop\\Python\\INTELCPUGAMING.csv","r")
+                file=open("C:\\Users\\Student22\\Desktop\\Python\\INTELCPUGAMING.csv","r")
                 Reader=csv.reader(file)
                 L=[]
-                Uroll=int(input("\nEnter The SR.no. of Product to update.\n"))
+                Uroll=int(input("\nEnter The SR.no. of Product to update: \n"))
                 Found=False
                 for row in Reader:
                     if row[0]==str(Uroll):
@@ -410,7 +410,7 @@ while True:
                 if Found==False:
                     print('Sr.No. of Product not found')
                 else:
-                    file=open("C:\\Users\\Trans\\Desktop\\Python\\INTELCPUGAMING.csv","w+",newline='')
+                    file=open("C:\\Users\\Student22\\Desktop\\Python\\INTELCPUGAMING.csv","w+",newline='')
                     Writer=csv.writer(file)
                     Writer.writerows(L)
                     file.seek(0)
@@ -421,10 +421,10 @@ while True:
 
                     
             if CPUEdit==2:
-                file=open("C:\\Users\\Trans\\Desktop\\Python\\INTELCPUEDITING.csv","r")
+                file=open("C:\\Users\\Student22\\Desktop\\Python\\INTELCPUEDITING.csv","r")
                 Reader=csv.reader(file)
                 L=[]
-                Uroll=int(input("\nEnter The SR.no. of Product to update.\n"))
+                Uroll=int(input("\nEnter The SR.no. of Product to update: \n"))
                 Found=False
                 for row in Reader:
                     if row[0]==str(Uroll):
@@ -453,7 +453,7 @@ while True:
                 if Found==False:
                     print('Sr.No. of Product not found')
                 else:
-                    file=open("C:\\Users\\Trans\\Desktop\\Python\\INTELCPUEDITING.csv","w+",newline='')
+                    file=open("C:\\Users\\Student22\\Desktop\\Python\\INTELCPUEDITING.csv","w+",newline='')
                     Writer=csv.writer(file)
                     Writer.writerows(L)
                     file.seek(0)
@@ -463,10 +463,10 @@ while True:
                     file.close()
 
         if DataChange==3:
-            file=open("C:\\Users\\Trans\\Desktop\\Python\\NVIDIAGPU.csv","r")
+            file=open("C:\\Users\\Student22\\Desktop\\Python\\NVIDIAGPU.csv","r")
             Reader=csv.reader(file)
             L=[]
-            Uroll=int(input("\nEnter The SR.no. of Product to update.\n"))
+            Uroll=int(input("\nEnter The SR.no. of Product to update:\n"))
             Found=False
             for row in Reader:
                 if row[0]==str(Uroll):
@@ -494,7 +494,7 @@ while True:
             if Found==False:
                 print('Sr.No. of Product not found')
             else:
-                file=open("C:\\Users\\Trans\\Desktop\\Python\\NVIDIAGPU.csv","w+",newline='')
+                file=open("C:\\Users\\Student22\\Desktop\\Python\\NVIDIAGPU.csv","w+",newline='')
                 Writer=csv.writer(file)
                 Writer.writerows(L)
                 file.seek(0)
@@ -505,10 +505,10 @@ while True:
 
             
         if DataChange==4:
-            file=open("C:\\Users\\Trans\\Desktop\\Python\AMDGPU.csv","r")
+            file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDGPU.csv","r")
             Reader=csv.reader(file)
             L=[]
-            Uroll=int(input("\nEnter The SR.no. of Product to update.\n"))
+            Uroll=int(input("\nEnter The SR.no. of Product to update: \n"))
             Found=False
             for row in Reader:
                 if row[0]==str(Uroll):
@@ -536,7 +536,7 @@ while True:
             if Found==False:
                 print('Sr.No. of Product not found')
             else:
-                file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDGPU.csv","w+",newline='')
+                file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDGPU.csv","w+",newline='')
                 Writer=csv.writer(file)
                 Writer.writerows(L)
                 file.seek(0)
@@ -553,10 +553,10 @@ while True:
                 CPUDelete=int(input("\nChatbot : WHAT IS YOUR AMD CPU CATEGORY?\n                       1. Light Gaming/Office \n                       2. Heavy Gaming/Editing \n                       Enter number as reply.\n"+str(Username)))
 
                 if CPUDelete==1:
-                    file=open("C:\\Users\\Trans\\Desktop\\Python\AMDCPUGAMING.csv","r")
+                    file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDCPUGAMING.csv","r")
                     Reader=csv.reader(file)
                     L=[]
-                    Uroll=int(input("\nEnter The SR.no. of Product to Delete.\n"))
+                    Uroll=int(input("\nEnter The SR.no. of Product to Delete: \n"))
                     Found=False
                     for row in Reader:
                         if row[0]==str(Uroll):
@@ -568,7 +568,7 @@ while True:
                     if Found==False:
                         print('Sr.No. of Product not found')
                     else:
-                     file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUEDITING.csv","w+",newline='')
+                     file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDCPUEDITING.csv","w+",newline='')
                     Writer=csv.writer(file)
                     Writer.writerows(L)
                     file.seek(0)
@@ -578,10 +578,10 @@ while True:
                     file.close()
 
                 if CPUDelete==2:
-                    file=open("C:\\Users\\Trans\\Desktop\\Python\AMDCPUGAMING.csv","r")
+                    file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDCPUGAMING.csv","r")
                     Reader=csv.reader(file)
                     L=[]
-                    Uroll=int(input("\nEnter The SR.no. of Product to Delete.\n"))
+                    Uroll=int(input("\nEnter The SR.no. of Product to Delete: \n"))
                     Found=False
                     for row in Reader:
                         if row[0]==str(Uroll):
@@ -593,7 +593,7 @@ while True:
                     if Found==False:
                         print('Sr.No. of Product not found')
                     else:
-                     file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUEDITING.csv","w+",newline='')
+                     file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDCPUEDITING.csv","w+",newline='')
                     Writer=csv.writer(file)
                     Writer.writerows(L)
                     file.seek(0)
@@ -606,10 +606,10 @@ while True:
                 CPUDelete=int(input("\nChatbot : WHAT IS YOUR INTEL CPU CATEGORY?\n                       1. Light Gaming/Office \n                       2. Heavy Gaming/Editing \n                       Enter number as reply.\n"+str(Username)))
 
                 if CPUDelete==1:
-                    file=open("C:\\Users\\Trans\\Desktop\\Python\INTELCPUGAMING.csv","r")
+                    file=open("C:\\Users\\Student22\\Desktop\\Python\\INTELCPUGAMING.csv","r")
                     Reader=csv.reader(file)
                     L=[]
-                    Uroll=int(input("\nEnter The SR.no. of Product to Delete.\n"))
+                    Uroll=int(input("\nEnter The SR.no. of Product to Delete: \n"))
                     Found=False
                     for row in Reader:
                         if row[0]==str(Uroll):
@@ -621,7 +621,7 @@ while True:
                     if Found==False:
                         print('Sr.No. of Product not found')
                     else:
-                     file=open("C:\\Users\\Trans\\Desktop\\Python\\INTELCPUGAMING.csv","w+",newline='')
+                     file=open("C:\\Users\\Student22\\Desktop\\Python\\INTELCPUGAMING.csv","w+",newline='')
                     Writer=csv.writer(file)
                     Writer.writerows(L)
                     file.seek(0)
@@ -631,10 +631,10 @@ while True:
                     file.close()
 
                 if CPUDelete==2:
-                    file=open("C:\\Users\\Trans\\Desktop\\Python\INTELCPUEDITING.csv","r")
+                    file=open("C:\\Users\\Student22\\Desktop\\Python\\INTELCPUEDITING.csv","r")
                     Reader=csv.reader(file)
                     L=[]
-                    Uroll=int(input("\nEnter The SR.no. of Product to Delete.\n"))
+                    Uroll=int(input("\nEnter The SR.no. of Product to Delete: \n"))
                     Found=False
                     for row in Reader:
                         if row[0]==str(Uroll):
@@ -646,7 +646,7 @@ while True:
                     if Found==False:
                         print('Sr.No. of Product not found')
                     else:
-                     file=open("C:\\Users\\Trans\\Desktop\\Python\\INTELCPUEDITING.csv","w+",newline='')
+                     file=open("C:\\Users\\Student22\\Desktop\\Python\\INTELCPUEDITING.csv","w+",newline='')
                     Writer=csv.writer(file)
                     Writer.writerows(L)
                     file.seek(0)
@@ -656,10 +656,10 @@ while True:
                     file.close()
 
             if DataDelete==3:
-                file=open("C:\\Users\\Trans\\Desktop\\Python\\NVIDIAGPU.csv","r")
+                file=open("C:\\Users\\Student22\\Desktop\\Python\\NVIDIAGPU.csv","r")
                 Reader=csv.reader(file)
                 L=[]
-                Uroll=int(input("\nEnter The SR.no. of Product to Delete.\n"))
+                Uroll=int(input("\nEnter The SR.no. of Product to Delete: \n"))
                 Found=False
                 for row in Reader:
                     if row[0]==str(Uroll):
@@ -671,7 +671,7 @@ while True:
                 if Found==False:
                     print('Sr.No. of Product not found')
                 else:
-                    file=open("C:\\Users\\Trans\\Desktop\\Python\\NVIDIAGPU.csv","w+",newline='')
+                    file=open("C:\\Users\\Student22\\Desktop\\Python\\NVIDIAGPU.csv","w+",newline='')
                     Writer=csv.writer(file)
                     Writer.writerows(L)
                     file.seek(0)
@@ -681,10 +681,10 @@ while True:
                     file.close()
 
             if DataDelete==4:
-                file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDGPU.csv","r")
+                file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDGPU.csv","r")
                 Reader=csv.reader(file)
                 L=[]
-                Uroll=int(input("\nEnter The SR.no. of Product to Delete.\n"))
+                Uroll=int(input("\nEnter The SR.no. of Product to Delete: \n"))
                 Found=False
                 for row in Reader:
                     if row[0]==str(Uroll):
@@ -696,7 +696,7 @@ while True:
                 if Found==False:
                     print('Sr.No. of Product not found')
                 else:
-                    file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDGPU.csv","w+",newline='')
+                    file=open("C:\\Users\\Student22\\Desktop\\Python\\AMDGPU.csv","w+",newline='')
                     Writer=csv.writer(file)
                     Writer.writerows(L)
                     file.seek(0)
