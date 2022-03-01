@@ -6,23 +6,19 @@ pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
 pd.set_option('display.max_colwidth', None)
-#REFERENCES:
-#CSV'S: https://www.techpowerup.com/
-#Python syntax help: https://geeksforgeeks.com/
-#IDEAS help: https://www.knowasiak.com/
-#Predefined statement as output for easy implementation.
-#predefine statements for further use in the program many times
+
 PrintStatement="\n\nHere are the best recent releases, that will be suitable for ALL PURPOSES including Gaming & Editing.\n\n"
 wronginput="\n\nYou have given unspecified input. Please give the input again to proceed."
+print("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
 #introduction text for the whole progrram
-print("\n\nChatbot : HELLO GUEST! WELCOME TO MY IP PROJECT. \n                       This chatbot is made by Aditya Gaurav as a IP project of class 12th Science CRSKYN; \n                       For helping people to understand more about CPU's, GPU's and there realted things, and help them to buy according to their need.\n")
+print("Chatbot : HELLO GUEST! WELCOME TO MY IP PROJECT.\n                       This chatbot is made by Aditya Gaurav as a IP project of class 12th Science CRSKYN; \n                       For helping people to understand more about CPU's, GPU's and there realted things,\n                       and help them get a clarity to buy according to their need.\n")
 #Asking the name of the user to feel reliable and increase User Experience.
-Name=input("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\nChatbot : Hello buddy! \n                       I would like to know your name to begin.\n                       Enter your name : ")
+Name=input("\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n\nChatbot : Hello buddy! \n                       I would like to know your name to begin.\n                       Enter your name : ")
 print("\nYour Input :",Name)
 
 while True:
     #Guiding the user to asnwer based upon the field of his query to go step by step.
-    print("\n\nChatbot : Hello", Name,".\n                       HOW MAY I HELP YOU TODAY? \n \n                       Q. Choose your Query Type : \n                       1. Technical Terminologies Guide \n                       2. CPU Buying Guide \n                       3. GPU Buying Guide\n                       4. Visual Representations\n                       5. Edit Data\n                        5. Add SKUs\n                        Enter your answer in number.")
+    print("\n\nChatbot : Hello", Name,".\n                       HOW MAY I HELP YOU TODAY? \n \n                       Q. Choose your Query Type : \n                       1. Technical Terminologies Guide \n                       2. CPU Buying Guide \n                       3. GPU Buying Guide\n                       4. Visual Representations\n                       5. Edit Data\n                      6. Add SKUs\n                        Enter your answer in number.")
 
     #predefined the name of the user of thsi chatbot to use it again in the system easily using concatenation.
     Username=(" \n "+ str(Name)+" : ")
@@ -97,7 +93,7 @@ while True:
         GPUid=int(input("                       1. AMD\n                       2. Nvidia\n                       Enter number as reply.\n"+str(Username)))
         #Storing user input in variable to compare it later in code and show predefined outputs.
         if GPUid==1:
-            df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\AMDGPU.csv",names=["Sr.no.","Product Name","Chip","Released","Bus","Memory","MemoryType","Bus Width","G.Clocks","M,Clocks","Shaders/TMU's/ROP's"])
+            df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\AMDGPU.csv",names=["Sr.no.","Product Name","Chip","Released","Bus","Memory","Bus Width","G.Clocks","M,Clocks","Shaders/TMU's/ROP's"])
             print(PrintStatement,df)
         elif GPUid==2:
             df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\NVIDIAGPU.csv",names=["Sr.no.","Product Name","Chip","Released","Bus","Memory","Bus Width","G.Clocks","M,Clocks","Shaders/TMU's/ROP's"])
@@ -152,6 +148,8 @@ while True:
                 for i in REC:
                     wr.writerow(i)
                 file.close()
+                df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUGAMING.csv",names=["Sr.no.","Product Name","Codename","Cores","Clock","Socket","Lithography","L3 Cache","TDP","Released","Approx.Price"])
+                print(PrintStatement,df)
 
             if CPUEdit==2:
                 file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUEDITING.csv","a+",newline='')
@@ -176,6 +174,8 @@ while True:
                 for i in REC:
                     wr.writerow(i)
                 file.close()
+                df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUEDITING.csv",names=["Sr.no.","Product Name","Codename","Cores","Clock","Socket","Lithography","L3 Cache","TDP","Released","Approx.Price"])
+                print(PrintStatement,df)
             else:
                 print(wronginput)
 
@@ -204,6 +204,8 @@ while True:
                 for i in REC:
                     wr.writerow(i)
                 file.close()
+                df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\INTELCPUGAMING.csv",names=["Sr.no.","Product Name","Codename","Cores","Clock","Socket","Lithography","L3 Cache","TDP","Released","Approx.Price"])
+                print(PrintStatement,df)
 
             if CPUEdit==2:
                 file=open("C:\\Users\\Trans\\Desktop\\Python\\INTELCPUEDITING.csv","a+",newline='')
@@ -228,59 +230,64 @@ while True:
                 for i in REC:
                     wr.writerow(i)
                 file.close()
+                df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\INTELCPUEDITING.csv",names=["Sr.no.","Product Name","Codename","Cores","Clock","Socket","Lithography","L3 Cache","TDP","Released","Approx.Price"])
+                print(PrintStatement,df)
 
             else:
                 print(wronginput)
 
         if DataADD==3:
             file=open("C:\\Users\\Trans\\Desktop\\Python\\NVIDIAGPU.csv","a+",newline='')
-                wr=csv.writer(file)
-                wr.writerow([])
-                REC=[]
-                ask='y'
-                while ask=='y':
-                    SR=input("Enter Sr.No. of Product")
-                    Product=input("Enter Product Name: ")
-                    SKU=input("Enter SKU Name: ")
-                    Date=input("Enter Product Launch Date: ")
-                    Cores=input("Enter PCIe Lane ")
-                    Clock=input("Enter Memory in GB: ")
-                    Socket=input("Enter RAM Type: ")
-                    Lithography=input("Enter Bus Width: ")
-                    Cache=input("Enter G.Clocks: ")
-                    Power=input("Enter Mem. Clocks: ")
-                    Tflops=input("Enter Shaders,TMUs,ROPs")
-                    NewREC=[SR,Product ,SKU,Date,Cores,Clock,Socket,Lithography,Cache,Power,Tflops]
-                    REC.append(NewREC)
-                    ask=input("\nEnter y to continue or any other char to exit")
-                for i in REC:
-                    wr.writerow(i)
-                file.close()
+            wr=csv.writer(file)
+            wr.writerow([])
+            REC=[]
+            ask='y'
+            while ask=='y':
+                SR=input("Enter Sr.No. of Product")
+                Product=input("Enter Product Name: ")
+                SKU=input("Enter SKU Name: ")
+                Date=input("Enter Product Launch Date: ")
+                Cores=input("Enter PCIe Lane ")
+                Clock=input("Enter Memory in GB: ")
+                Socket=input("Enter RAM Type: ")
+                Lithography=input("Enter Bus Width: ")
+                Cache=input("Enter G.Clocks: ")
+                Power=input("Enter Mem. Clocks: ")
+                Tflops=input("Enter Shaders,TMUs,ROPs")
+                NewREC=[SR,Product ,SKU,Date,Cores,Clock,Socket,Lithography,Cache,Power,Tflops]
+                REC.append(NewREC)
+                ask=input("\nEnter y to continue or any other char to exit")
+            for i in REC:
+                wr.writerow(i)
+            file.close()
+            df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\NVIDIAGPU.csv",names=["Sr.no.","Product Name","Chip","Released","Bus","Memory","Bus Width","G.Clocks","M,Clocks","Shaders/TMU's/ROP's"])
+            print(PrintStatement,df)
                 
         if DataADD==4:
             file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDGPU.csv","a+",newline='')
-                wr=csv.writer(file)
-                wr.writerow([])
-                REC=[]
-                ask='y'
-                while ask=='y':
-                    SR=input("Enter Sr.No. of Product")
-                    Product=input("Enter Product Name: ")
-                    SKU=input("Enter SKU Name: ")
-                    Date=input("Enter Product Launch Date: ")
-                    Cores=input("Enter PCIe Lane ")
-                    Clock=input("Enter Memory in GB: ")
-                    Socket=input("Enter RAM Type: ")
-                    Lithography=input("Enter Bus Width: ")
-                    Cache=input("Enter G.Clocks: ")
-                    Power=input("Enter Mem. Clocks: ")
-                    Tflops=input("Enter Shaders,TMUs,ROPs")
-                    NewREC=[SR,Product ,SKU,Date,Cores,Clock,Socket,Lithography,Cache,Power,Tflops]
-                    REC.append(NewREC)
-                    ask=input("\nEnter y to continue or any other char to exit")
-                for i in REC:
-                    wr.writerow(i)
-                file.close()
+            wr=csv.writer(file)
+            wr.writerow([])
+            REC=[]
+            ask='y'
+            while ask=='y':
+                SR=input("Enter Sr.No. of Product")
+                Product=input("Enter Product Name: ")
+                SKU=input("Enter SKU Name: ")
+                Date=input("Enter Product Launch Date: ")
+                Cores=input("Enter PCIe Lane ")
+                Clock=input("Enter Memory in GB with RAM Type: ")
+                Lithography=input("Enter Bus Width: ")
+                Cache=input("Enter G.Clocks: ")
+                Power=input("Enter Mem. Clocks: ")
+                Tflops=input("Enter Shaders,TMUs,ROPs")
+                NewREC=[SR,Product ,SKU,Date,Cores,Clock,Lithography,Cache,Power,Tflops]
+                REC.append(NewREC)
+                ask=input("\nEnter y to continue or any other char to exit")
+            for i in REC:
+                wr.writerow(i)
+            file.close()
+            df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\AMDGPU.csv",names=["Sr.no.","Product Name","Chip","Released","Bus","Memory","Bus Width","G.Clocks","M,Clocks","Shaders/TMU's/ROP's"])
+            print(PrintStatement,df)
 
         
     elif Guide==5:
@@ -483,10 +490,12 @@ while True:
                     row[5]=Memory
                     Bus=input("Enter Bus WIdth in bits: ")
                     row[6]=Bus
-                    Clock=input("Enter Process Graphic Processor Clock Speeds in Mhz: ")
+                    Clock=input("Enter GPU Clock Speeds in Mhz: ")
                     row[7]=Clock
+                    MClock=input("Enter Memory Clock Speeds in Mhz: ")
+                    row[8]=MClock
                     Tflops=input("Enter Shaders/TMU's/ROP's: ")
-                    row[8]=Tflops
+                    row[9]=Tflops
                         
                 L.append(row)
             file.close()
@@ -525,10 +534,12 @@ while True:
                     row[5]=Memory
                     Bus=input("Enter Bus WIdth in bits: ")
                     row[6]=Bus
-                    Clock=input("Enter Process Graphic Processor Clock Speeds in Mhz: ")
+                    Clock=input("Enter GPU Clock Speeds in Mhz: ")
                     row[7]=Clock
+                    MClock=input("Enter Memory Clock Speeds in Mhz: ")
+                    row[8]=MClock
                     Tflops=input("Enter Shaders/TMU's/ROP's: ")
-                    row[8]=Tflops
+                    row[9]=Tflops
                         
                 L.append(row)
             file.close()
@@ -712,3 +723,9 @@ while True:
     else:
         print(wronginput)
 #Thanks for reading the code, the code copyright belongs to Aditya Gaurav (@TRANSFINIXSKUIX) . +91 83034 34025
+#REFERENCES:
+#CSV'S: https://www.techpowerup.com/
+#Python syntax help: https://geeksforgeeks.com/
+#IDEAS help: https://www.knowasiak.com/
+#Predefined statement as output for easy implementation.
+#predefine statements for further use in the program many times
