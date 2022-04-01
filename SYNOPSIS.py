@@ -93,10 +93,10 @@ while True:
         GPUid=int(input("                       1. AMD\n                       2. Nvidia\n                       Enter number as reply.\n"+str(Username)))
         #Storing user input in variable to compare it later in code and show predefined outputs.
         if GPUid==1:
-            df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\AMDGPU.csv",names=["Sr.no.","Product Name","Chip","Released","Bus","Memory","Bus Width","G.Clocks","M,Clocks","Shaders/TMU's/ROP's"])
+            df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\AMDGPU.csv",names=["Sr.no.","Product Name","Chip","Released","Bus","Memory","Bus Width","G.Clocks","M,Clocks","Shaders/TMU's/ROP's","Approx.Price"])
             print(PrintStatement,df)
         elif GPUid==2:
-            df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\NVIDIAGPU.csv",names=["Sr.no.","Product Name","Chip","Released","Bus","Memory","Bus Width","G.Clocks","M,Clocks","Shaders/TMU's/ROP's"])
+            df=pd.read_csv("C:\\Users\\Trans\\Desktop\\Python\\NVIDIAGPU.csv",names=["Sr.no.","Product Name","Chip","Released","Bus","Memory","Bus Width","G.Clocks","M,Clocks","Shaders/TMU's/ROP's","Approx.Price"])
             print(PrintStatement,df)
         else:
             print(wronginput)
@@ -142,7 +142,8 @@ while True:
                     Cache=input("Enter L3 Cache size in MB: ")
                     Power=input("Enter Power Usage in Watts: ")
                     Date=input("Enter Product Launch Date: ")
-                    NewREC=[SR,Product ,SKU,Cores,Clock,Socket,Lithography,Cache,Power,Date]
+                    MSRP=input("What is the product MSRP: ")
+                    NewREC=[SR,Product ,SKU,Cores,Clock,Socket,Lithography,Cache,Power,Date,MSRP]
                     REC.append(NewREC)
                     ask=input("\nEnter y to continue or any other char to exit")
                 for i in REC:
@@ -168,7 +169,8 @@ while True:
                     Cache=input("Enter L3 Cache size in MB: ")
                     Power=input("Enter Power Usage in Watts: ")
                     Date=input("Enter Product Launch Date: ")
-                    NewREC=[SR,Product ,SKU,Cores,Clock,Socket,Lithography,Cache,Power,Date]
+                    MSRP=input("What is the product MSRP: ")
+                    NewREC=[SR,Product ,SKU,Cores,Clock,Socket,Lithography,Cache,Power,Date,MSRP]
                     REC.append(NewREC)
                     ask=input("\nEnter y to continue or any other char to exit")
                 for i in REC:
@@ -198,7 +200,8 @@ while True:
                     Cache=input("Enter L3 Cache size in MB: ")
                     Power=input("Enter Power Usage in Watts: ")
                     Date=input("Enter Product Launch Date: ")
-                    NewREC=[SR,Product ,SKU,Cores,Clock,Socket,Lithography,Cache,Power,Date]
+                    MSRP=input("What is the product MSRP: ")
+                    NewREC=[SR,Product ,SKU,Cores,Clock,Socket,Lithography,Cache,Power,Date,MSRP]
                     REC.append(NewREC)
                     ask=input("\nEnter y to continue or any other char to exit")
                 for i in REC:
@@ -224,7 +227,8 @@ while True:
                     Cache=input("Enter L3 Cache size in MB: ")
                     Power=input("Enter Power Usage in Watts: ")
                     Date=input("Enter Product Launch Date: ")
-                    NewREC=[SR,Product ,SKU,Cores,Clock,Socket,Lithography,Cache,Power,Date]
+                    MSRP=input("What is the product MSRP: ")
+                    NewREC=[SR,Product ,SKU,Cores,Clock,Socket,Lithography,Cache,Power,Date,MSRP]
                     REC.append(NewREC)
                     ask=input("\nEnter y to continue or any other char to exit")
                 for i in REC:
@@ -254,7 +258,8 @@ while True:
                 Cache=input("Enter G.Clocks: ")
                 Power=input("Enter Mem. Clocks: ")
                 Tflops=input("Enter Shaders,TMUs,ROPs")
-                NewREC=[SR,Product ,SKU,Date,Cores,Clock,Socket,Lithography,Cache,Power,Tflops]
+                MSRP=input("What is the product MSRP: ")
+                NewREC=[SR,Product ,SKU,Date,Cores,Clock,Socket,Lithography,Cache,Power,Tflops,MSRP]
                 REC.append(NewREC)
                 ask=input("\nEnter y to continue or any other char to exit")
             for i in REC:
@@ -280,7 +285,8 @@ while True:
                 Cache=input("Enter G.Clocks: ")
                 Power=input("Enter Mem. Clocks: ")
                 Tflops=input("Enter Shaders,TMUs,ROPs")
-                NewREC=[SR,Product ,SKU,Date,Cores,Clock,Lithography,Cache,Power,Tflops]
+                MSRP=input("What is the product MSRP: ")
+                NewREC=[SR,Product ,SKU,Date,Cores,Clock,Lithography,Cache,Power,Tflops,MSRP]
                 REC.append(NewREC)
                 ask=input("\nEnter y to continue or any other char to exit")
             for i in REC:
@@ -324,6 +330,8 @@ while True:
                         row[8]=Power
                         Date=input("Enter Product Launch Date: ")
                         row[9]=Date
+                        MSRP=input("Enter Product MSRP: ")
+                        row[10]=MSRP
                     L.append(row)
                 file.close()
 
@@ -579,6 +587,7 @@ while True:
                     if Found==False:
                         print('Sr.No. of Product not found')
                     else:
+                        
                      file=open("C:\\Users\\Trans\\Desktop\\Python\\AMDCPUEDITING.csv","w+",newline='')
                     Writer=csv.writer(file)
                     Writer.writerows(L)
@@ -722,7 +731,7 @@ while True:
             print(wronginput)
     else:
         print(wronginput)
-#Thanks for reading the code, the code copyright belongs to Aditya Gaurav (@TRANSFINIXSKUIX) . +91 83034 34025
+#Thanks for reading the code, the code copyright belongs to Aditya Gaurav (@TRANSFINIXSKUIX) .
 #REFERENCES:
 #CSV'S: https://www.techpowerup.com/
 #Python syntax help: https://geeksforgeeks.com/
